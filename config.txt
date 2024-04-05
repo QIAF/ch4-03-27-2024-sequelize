@@ -1,0 +1,3 @@
+1. create directory
+
+// initialisasi node js ke projectnya dan install p
