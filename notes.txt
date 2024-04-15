@@ -1,1 +1,3 @@
 jangan lupa install ejs
+npm connect-flash (ngasih notif/pop up)
+npm i express-session

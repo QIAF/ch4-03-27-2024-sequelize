@@ -2,6 +2,8 @@ require("dotenv").config()
 
 const express = require("express")
 const morgan = require("morgan")
+const flash = require("connect-flash")
+const session = require("express-session")
 
 const router = require("./routes")
 
@@ -14,6 +16,16 @@ app.use (express.urlencoded({extended:false}));
 app.set("views",__dirname + "/views")
 app.set("view engine", "ejs")
 
+app.use(
+    session({
+        secret: "apaaja",
+        saveUninitialized: true,
+        resave: true
+    })
+)
+
+app.use(express.static(`${__dirname}/public`)); // biar bisa baca static file di public
+app.use(flash()); // panggil flash
 app.use (morgan('dev'));
 app.use(router);
 
