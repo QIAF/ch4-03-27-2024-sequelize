@@ -18,7 +18,6 @@ const createCustomer = async (req, res) =>{
                 newCustomer,
             },
         });
-
     }catch(err){
         console.log(err.message);
     }
